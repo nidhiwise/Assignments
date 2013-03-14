@@ -1,16 +1,17 @@
-blib/
-.build/
-_build/
-cover_db/
-inc/
-Build
-!Build/
-Build.bat
-.last_cover_stats
-Makefile
-Makefile.old
-MANIFEST.bak
-META.yml
-MYMETA.yml
-nytprof.out
-pm_to_blib
+#!/usr/local/bin/perl
+
+use strict;
+use warnings;
+
+my ($file,$arr);
+my (@arr,@sort);
+
+$file="C:\\github\\file.txt";
+
+open (FILE,"<$file");
+@arr=<FILE>;
+close FILE;
+
+@sort = sort {length $b <=> length $a} @arr;
+
+print ("\n\nSorted Array according to length in descending order are \n @sort\n\n");
